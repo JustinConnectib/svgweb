@@ -18,8 +18,8 @@ package org.svgweb.core
     public class SVGViewer extends Sprite
     {
         public var svgRoot:SVGSVGNode;
-        
-        // flag that indicates whether this viewer is in the middle of a 
+
+        // flag that indicates whether this viewer is in the middle of a
         // suspendRedraw operation
         public var isSuspended:Boolean = false;
 
@@ -87,11 +87,11 @@ package org.svgweb.core
 
         public function removeActionListener(eventType:String, target:EventDispatcher):void {
 
-        } 
-        
+        }
+
         public function customizeContextMenu():void {
             context = new ContextMenu();
-            
+
             // Compiler constants are used to specify the release name and
             // release number.  If the release name is not specified, none
             // will be shown.  If the release number is not specified, the
@@ -107,8 +107,8 @@ package org.svgweb.core
             itemAbout.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, aboutSVGWeb);
             itemBug.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, reportBug);
             this.contextMenu = context;
-            this.contextMenu.customItems.push(itemAbout);
-            this.contextMenu.customItems.push(itemBug);
+            this.contextMenu['customItems'].push(itemAbout);
+            this.contextMenu['customItems'].push(itemBug);
 
             function aboutSVGWeb():void {
                 navigateToURL(new URLRequest("http://code.google.com/p/svgweb/"));
@@ -120,19 +120,19 @@ package org.svgweb.core
 
         public function debug(debugMessage:String):void {
         }
-        
+
         public function error(message:String):void {
             this.debug(message);
         }
-        
+
         /** Functions for profiling. */
         public function start(subject:String, subjectStarted:String = null):void {
         }
-        
+
         /** Functions for profiling. */
         public function end(subject:String, subjectStarted:String = null):void {
         }
-        
+
         /** Functions for profiling. */
         public function increment(subject:String, amount:int):void {
         }
