@@ -270,7 +270,7 @@ package org.svgweb
             // View Source Custom Menu Item
             var itemViewSource:ContextMenuItem = new ContextMenuItem("View SVG Source");
             itemViewSource.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, viewSource);
-            this.contextMenu.customItems.push(itemViewSource);
+            this.contextMenu[ 'customItems' ].push(itemViewSource);
             function viewSource():void {
                 try {
                     ExternalInterface.call(outerthis.js_handler + "onMessage",
@@ -284,7 +284,7 @@ package org.svgweb
             // View Source Dynamic Custom Menu Item
             var itemViewSourceDynamic:ContextMenuItem = new ContextMenuItem("View SVG Source - Dynamic");
             itemViewSourceDynamic.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, viewSourceDynamic);
-            this.contextMenu.customItems.push(itemViewSourceDynamic);
+            this.contextMenu['customItems'].push(itemViewSourceDynamic);
             function viewSourceDynamic():void {
                 try {
                     var dynamicXMLString:String = outerthis.svgRoot.getXMLTree(0, true);

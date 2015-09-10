@@ -96,10 +96,11 @@ package org.svgweb.core
             // release number.  If the release name is not specified, none
             // will be shown.  If the release number is not specified, the
             // SVN revision of this source file is shown
-            var releaseName:String = ''+BUILD::releaseName;
+			
+            var releaseName:String = '' ;// +BUILD::releaseName;
             if (releaseName.length!=0)
                 releaseName += ' ';
-            var releaseNumber:String = ''+BUILD::releaseNumber;
+            var releaseNumber:String = '' ;// +BUILD::releaseNumber;
             if (releaseNumber.length == 0)
                 releaseNumber = "$Rev$".replace(/[^0-9]/g, "");
             var itemAbout:ContextMenuItem = new ContextMenuItem("About SVG Web (" + releaseName + "r" + releaseNumber + ")");
